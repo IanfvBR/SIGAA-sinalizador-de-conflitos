@@ -1,7 +1,9 @@
-<h1>manifest.json</h1>
-<p> O manifest foi criado para Mozilla Firefox, na versão v3, com permissão de activeTab e scripting, e hook para o background-script.js</p>
-<h1>background-script.js</h1>
-<p> Tudo que esse script faz é receber o evento do default action, quando se clica para executar a extensão, e injetar o content-script.js</p>
-<h1>content-script.js</h1>
-<p> Reutiliza o modulo content-manager.js do outro <a href="https://github.com/IanfvBR/calculadora-de-grade-horaria/tree/main">projeto</a>, lê os elementos da página e insere mensagens sinalizadoras informando
-  se há ou não conflito de horário.</p>
+<h1> SIGAA - sinalizador de conflitos</h1>
+<p> Um add-on que automaticamente sinaliza conflitos de horários durante o processo de matrícula/rematrícula em disciplinas.
+ Projetado para sistemas que utilizam a plataforma SIGAA, e testado no SIGAA da UFRN. Por esse motivo, é possível que não funcione ou apresente bugs em sites de outras universidades.</p>
+
+ <h2> Como funciona?</h2>
+ <p> Ao clicar no ícone do add-on, o background-script injeta o content-script na página HTML</p>
+ <p> O content-script lê todas as disciplinas e turmas dentro da tabela, salvando elas numa lista de todos.</p>
+ <p> Quando um checkbox é marcado ou desmarcado, a turma é salva ou removida da lista de selecionados.</p>
+ <p> Sempre que há alguma alteração, as listas de todos e de selecionados são comparadas, checando por conflitos de horários, e então atualiza as mensagens se há ou não conflito de horário.</p>
